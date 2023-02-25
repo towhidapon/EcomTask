@@ -8,6 +8,6 @@ class AdminController extends Controller
 {
     public function adminIndex()
     {
-        return view('admin.adminhome');
+        return view('admin.admin.home');
     }
 }
