@@ -72,6 +72,7 @@ class LoginController extends Controller
      */
     public function login(Request $request)
     {
+
         $this->validateLogin($request);
 
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
@@ -85,6 +86,7 @@ class LoginController extends Controller
         }
 
         if ($this->attemptLogin($request)) {
+
             if ($request->hasSession()) {
                 $request->session()->put('auth.password_confirmed_at', time());
             }

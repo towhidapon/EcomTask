@@ -39,9 +39,7 @@ Route::get('index',[FrontendController::class, 'index'])->name('user.index');
 Route::get('shop',[FrontendController::class, 'shop'])->name('user.shop');
 
 
-// Route::get('/',[HomeController::class, 'index']);
 
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
