@@ -20,7 +20,7 @@ Route::namespace('Admin\Auth')->prefix('admin/')->name('admin.')->group(function
 // Authentication Routes...
 Route::get('login', 'LoginController@showLoginForm')->name('login');
 Route::post('login', 'LoginController@login');
-Route::post('logout', 'LoginController@logout')->name('logout');
+Route::get('logout', 'LoginController@logout')->name('logout');
 
 // Registration Routes...
 Route::get('register', 'RegisterController@showRegistrationForm')->name('register');
@@ -34,14 +34,17 @@ Route::post('password/reset', 'ResetPasswordController@reset');
 });
 
 
+Auth::routes();
 
 Route::get('index',[FrontendController::class, 'index'])->name('user.index');
 Route::get('shop',[FrontendController::class, 'shop'])->name('user.shop');
 
 
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
-
+Route::middleware('admin.guest')->namespace('Admin')->prefix('admin/')->name('admin.')->group(function(){
+    Route::get('dashboard', 'AdminController@index')->name('dashboard');
+    });
