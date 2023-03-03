@@ -26,6 +26,38 @@ class FrontendController extends Controller
     {
         return view('frontend.shop');
     }
+    public function about()
+    {
+        return view('frontend.about');
+    }
+    public function checkout()
+    {
+        return view('frontend.checkout');
+    }
+    public function cart()
+    {
+        return view('frontend.cart');
+    }
+    public function contact_us()
+    {
+        return view('frontend.contact_us');
+    }
+    public function privacy_policy()
+    {
+        return view('frontend.privacy_policy');
+    }
+    public function terms_conditions()
+    {
+        return view('frontend.terms_conditions');
+    }
+    public function return_policy()
+    {
+        return view('frontend.return_policy');
+    }
+    public function detail()
+    {
+        return view('frontend.detail');
+    }
 
     /**
      * Show the form for creating a new resource.

@@ -38,9 +38,17 @@ Auth::routes();
 
 Route::get('index',[FrontendController::class, 'index'])->name('user.index');
 Route::get('shop',[FrontendController::class, 'shop'])->name('user.shop');
-
+Route::get('about', [FrontendController::class, 'about'])->name('user.about');
+Route::get('contact_us', [FrontendController::class, 'contact_us'])->name('user.contact_us');
+Route::get('cart', [FrontendController::class, 'cart'])->name('user.cart');
+Route::get('checkout', [FrontendController::class, 'checkout'])->name('user.checkout');
+Route::get('privacy_policy', [FrontendController::class, 'privacy_policy'])->name('user.privacy_policy');
+Route::get('terms_conditions', [FrontendController::class, 'terms_conditions'])->name('user.terms_conditions');
+Route::get('return_policy', [FrontendController::class, 'return_policy'])->name('user.return_policy');
+Route::get('detail', [FrontendController::class, 'detail'])->name('user.detail');
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 
 // Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
