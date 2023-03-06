@@ -57,11 +57,11 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 
 // Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::middleware('admin.guest')->namespace('Admin')->prefix('admin/')->name('admin.')->group(function(){
+Route::middleware('admin.auth')->namespace('Admin')->prefix('admin/')->name('admin.')->group(function(){
     Route::get('dashboard', 'AdminController@index')->name('dashboard');
     Route::get('category', 'CategoryController@index')->name('category');
     Route::get('create_category', 'CategoryController@create')->name('create_category');
-    Route::post('category', 'CategoryController@create')->name('store');
+    Route::post('category/store', 'CategoryController@store')->name('store');
     });
 
 //Category Controller

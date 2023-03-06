@@ -20,15 +20,15 @@
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
                                             <label for="">Name</label>
-                                            <input type="text" name="name" class="form-control">
+                                            <input type="text" name="name" class="form-control  @error('name') is-invalid @enderror"">
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <label for="">Slug</label>
-                                            <input type="text" name="slug" class="form-control">
+                                            <input type="text" name="slug" class="form-control  @error('slug') is-invalid @enderror"">
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <label for="">Description</label>
-                                            <input type="text" name="Description" class="form-control">
+                                            <input type="text" name="description" class="form-control  @error('description') is-invalid @enderror"">
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <label for="">Image</label>
