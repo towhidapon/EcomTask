@@ -60,6 +60,8 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::middleware('admin.guest')->namespace('Admin')->prefix('admin/')->name('admin.')->group(function(){
     Route::get('dashboard', 'AdminController@index')->name('dashboard');
     Route::get('category', 'CategoryController@index')->name('category');
+    Route::get('create_category', 'CategoryController@create')->name('create_category');
+    Route::post('category', 'CategoryController@create')->name('store');
     });
 
 //Category Controller
