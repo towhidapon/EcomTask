@@ -5,6 +5,7 @@ use App\Http\Controllers\frontend\FrontendController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +32,9 @@ Route::get('password/reset', 'ForgotPasswordController@showLinkRequestForm');
 Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail');
 Route::get('password/reset/{token}', 'ResetPasswordController@showResetForm');
 Route::post('password/reset', 'ResetPasswordController@reset');
+
+
+
 });
 
 
