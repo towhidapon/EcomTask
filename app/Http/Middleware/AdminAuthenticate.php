@@ -22,7 +22,7 @@ class AdminAuthenticate
             if (!Auth::guard($guard)->check()) {
 
 
-                return to_route('admin.login');
+                return redirect('admin/login');
             }
 
 
