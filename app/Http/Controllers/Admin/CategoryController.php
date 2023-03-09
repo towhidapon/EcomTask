@@ -12,11 +12,12 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        return view('admin.category');
+        $data = Category::all();
+        return view('admin.category.showcat', compact('data'));
     }
     public function create()
     {
-        return view('admin.createcat');
+        return view('admin.category.createcat');
     }
     public function store(Request $request)
     {
