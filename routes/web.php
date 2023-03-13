@@ -61,7 +61,10 @@ Route::middleware('admin.auth')->namespace('Admin')->prefix('admin/')->name('adm
     Route::get('dashboard', 'AdminController@index')->name('dashboard');
     Route::get('category', 'CategoryController@index')->name('category');
     Route::get('create_category', 'CategoryController@create')->name('create_category');
+    Route::get('delete_category/{id}', 'CategoryController@delete');
+    Route::get('edit_category/{id}', 'CategoryController@edit')->name('edit_category');
     Route::post('category/store', 'CategoryController@store')->name('store');
+    Route::post('update_category/{id}', 'CategoryController@update');
     });
 
 //Category Controller

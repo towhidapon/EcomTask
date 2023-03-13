@@ -65,7 +65,41 @@ class CategoryController extends Controller
 
         $category->save();
 
-        return back()->with('message','Category Added Successfully');
+        return redirect()->back()->with('message','Category Added Successfully');
+    }
+    public function delete($id){
+
+        $category = Category::find($id);
+        $category -> delete();
+        return back()->with('message','Category deleted Successfully');
+    }
+    public function edit($id){
+        $category = Category::find($id);
+        return view('admin.category.editcat',compact('category'));
+    }
+    public function update(Request $request, $id){
+        $category = Category :: find($id);
+
+        $category->name = $request->name;
+        $category->description = $request->description;
+        $category->slug = $request->slug;
+
+        if($request->hasFile('image')) {
+            $file            = $request->file('image');
+            $fileName        = $file->getClientOriginalName();
+            $destinationPath = public_path().'/admin/category_image' ;
+            $file->move($destinationPath,$fileName);
+    	}
+
+        $category->image = $fileName;
+        $category->meta_title = $request->meta_title;
+        $category->meta_keyword = $request->meta_keyword;
+        $category->meta_description = $request->meta_description;
+
+        $category->status = $request->status == true ? '1':'0';
+
+        $category->save();
+        return redirect()->back()->with('message','Category Added Successfully');
     }
 
 }

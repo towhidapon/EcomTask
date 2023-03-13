@@ -14,8 +14,8 @@
                         <span key="t-dashboards">Category</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="index.html" key="t-default">All Category</a></li>
-                        <li><a href="dashboard-saas.html" key="t-saas">Add Category</a></li>
+                        <li><a href="{{route('admin.category')}}" key="t-default">All Category</a></li>
+                        <li><a href="{{route('admin.create_category')}}" key="t-saas">Add Category</a></li>
                     </ul>
                 </li>
 
