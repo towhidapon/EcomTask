@@ -28,12 +28,22 @@ class CategoryController extends Controller
             'meta_title'=>'required',
             'meta_keyword'=>'required',
             'meta_description'=>'required',
+            // 'specifications'=>'required, array'
 
         ]);
 
 
         $category = new Category;
         $category->name = $request->name;
+
+
+
+
+ // $product->specifications=$request->specifications;
+
+
+
+
         $category->slug = $request->slug;
         $category->description = $request->description;
 
