@@ -19,6 +19,8 @@
         <link href="{{asset('admin')}}/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <!-- App Css-->
         <link href="{{asset('admin')}}/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+        {{-- feature css --}}
+        <link href="{{asset('admin')}}/assets/css/features.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
     </head>
 
@@ -46,6 +48,10 @@
 
         <!-- App js -->
         <script src="{{asset('admin')}}/assets/js/app.js"></script>
+
+        <script src="{{asset('admin')}}/assets/js/features.js"></script>
+
+        @yield('scripts')
     </body>
 
 

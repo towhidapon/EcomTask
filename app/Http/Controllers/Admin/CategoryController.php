@@ -102,4 +102,8 @@ class CategoryController extends Controller
         return redirect()->back()->with('message','Category Added Successfully');
     }
 
+    public function add_product(){
+        return view('admin.product.addprod');
+    }
+
 }

@@ -65,6 +65,8 @@ Route::middleware('admin.auth')->namespace('Admin')->prefix('admin/')->name('adm
     Route::get('edit_category/{id}', 'CategoryController@edit')->name('edit_category');
     Route::post('category/store', 'CategoryController@store')->name('store');
     Route::post('update_category/{id}', 'CategoryController@update');
+
+    Route::get('add-product', 'CategoryController@add_product');
     });
 
 //Category Controller
